@@ -1,5 +1,7 @@
 package com.worker.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.alibaba.fastjson.serializer.ToStringSerializer;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -26,6 +28,7 @@ public class Worker implements Serializable {
      * 职工ID
      */
     @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @JSONField(serializeUsing = ToStringSerializer.class)
     private Long id;
 
     /**
