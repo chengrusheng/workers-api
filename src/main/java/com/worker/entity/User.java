@@ -30,7 +30,7 @@ public class User implements Serializable, UserDetails {
     /**
      * 用户编号
      */
-      @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
