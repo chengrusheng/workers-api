@@ -15,6 +15,10 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 用户详情服务
+ * @author chengrusheng
+ */
 @Component
 public class CustomerUserDetailsService implements UserDetailsService {
 

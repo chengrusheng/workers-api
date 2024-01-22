@@ -11,9 +11,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * <p>
- *  前端控制器
- * </p>
+ * 菜单管理
  *
  * @author chengrusheng
  * @since 2023-12-20

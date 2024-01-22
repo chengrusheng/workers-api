@@ -27,6 +27,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+/**
+ * 用户管理
+ * @description: 用户管理
+ */
 @RestController
 @RequestMapping("/api/sysUser")
 public class SysUserController {

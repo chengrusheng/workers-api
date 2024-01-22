@@ -8,6 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 
+/**
+ * JSON配置
+ * @author chengrusheng
+ */
 @Configuration
 public class JsonConfig {
 

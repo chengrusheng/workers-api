@@ -6,6 +6,10 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 角色菜单vo
+ * @author chengrusheng
+ */
 @Data
 public class RolePermissionVo {
 

@@ -13,14 +13,23 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * jwt工具类
+ * @author HP-PC
+ */
 @Data
 @ConfigurationProperties(prefix = "jwt")
 @Component
 public class JwtUtils {
-    //密钥
+
+    /**
+     * jwt密钥
+     */
     private String secret;
 
-    // 过期时间 毫秒
+    /**
+     * 过期时间 毫秒
+     */
     private Long expiration;
 
 

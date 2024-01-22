@@ -4,6 +4,10 @@ import org.springframework.beans.BeanUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+/**
+ * 部门树
+ * @author HP-PC
+ */
 public class DepartmentTree {
     /**
      * 生成部门树
@@ -18,7 +22,7 @@ public class DepartmentTree {
         List<Department> list = new ArrayList<Department>();
         //如果deptList部门列表不为空，则使用部门列表，否则创建集合对象
         Optional.ofNullable(deptList).orElse(new ArrayList<Department>())
-                .stream().filter(item -> item != null && item.getPid() == pid)
+                .stream().filter(item -> item != null && item.getPid().equals(pid))
                 .forEach(item -> {
                     //创建部门对象
                     Department dept = new Department();

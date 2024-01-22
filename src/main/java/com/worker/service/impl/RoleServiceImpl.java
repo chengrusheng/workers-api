@@ -67,4 +67,9 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
         baseMapper.deleteRolePermission(id);
         return baseMapper.deleteById(id)>0;
     }
+
+    @Override
+    public List<Long> findRoleIdByUserId(Long userId) {
+        return baseMapper.findRoleIdByUserId(userId);
+    }
 }

@@ -7,10 +7,25 @@ import lombok.Data;
  */
 @Data
 public class Result<T> {
-    private Boolean success;//是否成功
-    private Integer code;//状态码
-    private String message;//返回消息
-    private T data;//返回数据
+    /**
+     * 是否成功
+     */
+    private Boolean success;
+
+    /**
+     * 状态码
+     */
+    private Integer code;
+
+    /**
+     * 返回消息
+     */
+    private String message;
+
+    /**
+     * 返回数据
+     */
+    private T data;
 
     /**
      * 私有化构造方法，禁止在其它类创建对象
@@ -91,9 +106,11 @@ public class Result<T> {
      */
     public static<T> Result<T> exist(){
         Result<T> result = new Result<T>();
-        result.setSuccess(false);//存在该数据
-        //由于vue-element-admin模板在响应时验证状态码是否是200，如果不是200，则报错
-        result.setCode(ResultCode.SUCCESS);//执行成功，但存在该数据
+        // 存在该数据
+        result.setSuccess(false);
+        // 由于vue-element-admin模板在响应时验证状态码是否是200，如果不是200，则报错
+        // 执行成功，但存在该数据
+        result.setCode(ResultCode.SUCCESS);
         result.setMessage("该数据存在");
         return result;
     }

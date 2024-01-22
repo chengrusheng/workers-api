@@ -16,6 +16,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * 自定义访问拒绝处理类
+ * @author chengrusheng
  */
 @Component
 public class CustomerAccessDeniedHandler implements AccessDeniedHandler {

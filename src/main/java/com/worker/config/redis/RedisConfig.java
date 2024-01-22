@@ -20,10 +20,14 @@ import java.time.Duration;
 
 /**
  * redis配置类
+ * @author chengrusheng
  */
 @Configuration
 public class RedisConfig {
-    //缓存过期时间
+
+    /**
+     * 缓存过期时间
+     */
     @Value("${spring.redis.expire}")
     private Long expire;
 
@@ -55,11 +59,16 @@ public class RedisConfig {
         return template;
     }
 
-    //@Cacheable注解字符集编码配置
+    /**
+     * @Cacheable注解字符集编码配置
+     * @param factory
+     * @return
+     */
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory factory) {
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();
-        config.entryTtl(Duration.ofMinutes(expire))//缓存过期时间
+        //缓存过期时间
+        config.entryTtl(Duration.ofMinutes(expire))
                 .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.string()))
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(RedisSerializer.json()));
 

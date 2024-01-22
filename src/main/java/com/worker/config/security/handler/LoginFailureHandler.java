@@ -17,6 +17,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * 用户认证失败处理类
+ * @author chengrusheng
  */
 @Component
 public class LoginFailureHandler implements AuthenticationFailureHandler {
@@ -26,8 +27,10 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
         response.setContentType("application/json;charset=UTF-8");
         //获取输出流
         ServletOutputStream outputStream = response.getOutputStream();
-        String message = null;//提示信息
-        int code = 500;//错误编码
+        //提示信息
+        String message = null;
+        //错误编码
+        int code = 500;
         //判断异常类型
         if(exception instanceof AccountExpiredException){
             message = "账户过期,登录失败！";

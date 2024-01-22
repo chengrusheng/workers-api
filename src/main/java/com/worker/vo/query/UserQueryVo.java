@@ -1,14 +1,14 @@
 package com.worker.vo.query;
 
-import com.worker.entity.Role;
+import com.worker.entity.User;
 import lombok.Data;
 
 /**
- * 角色查询条件
+ * 用户查询vo
  * @author chengrusheng
  */
 @Data
-public class RoleQueryVo extends Role {
+public class UserQueryVo extends User {
 
     /**
      * 当前页码
@@ -19,9 +19,4 @@ public class RoleQueryVo extends Role {
      * 每页显示数量
      */
     private Long pageSize = 10L;
-
-    /**
-     * 用户ID
-     */
-    private Long userId;
 }

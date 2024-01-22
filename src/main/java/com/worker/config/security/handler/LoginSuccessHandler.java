@@ -22,6 +22,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * 登录认证成功处理器类
+ * @author chengrusheng
  */
 @Component
 public class LoginSuccessHandler implements AuthenticationSuccessHandler {
@@ -41,14 +42,15 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         //生成token
         String token = jwtUtils.generateToken(user);
         //设置token签名密钥及过期时间
-        long expireTime = Jwts.parser() //获取DefaultJwtParser对象
-                .setSigningKey(jwtUtils.getSecret()) //设置签名的密钥
+        //获取DefaultJwtParser对象
+        long expireTime = Jwts.parser()
+                //设置签名的密钥
+                .setSigningKey(jwtUtils.getSecret())
                 .parseClaimsJws(token.replace("jwt_", ""))
                 .getBody().getExpiration().getTime();//获取token过期时间
         //创建登录结果对象
-        LoginResult loginResult = new LoginResult(user.getId(),
+        LoginResult loginResult = new LoginResult(user.getId(),user.getUsername(),
                 ResultCode.SUCCESS,token,expireTime);
-        //消除循环引用
         //消除循环引用
         String result = JSON.toJSONString(loginResult,
                 SerializerFeature.DisableCircularReferenceDetect);

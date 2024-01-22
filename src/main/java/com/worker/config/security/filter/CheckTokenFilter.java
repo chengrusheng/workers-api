@@ -25,6 +25,7 @@ import java.io.IOException;
 
 /**
  * token验证过滤器
+ * @author chengrusheng
  */
 @Data
 @Component
@@ -38,7 +39,10 @@ public class CheckTokenFilter extends OncePerRequestFilter {
     private LoginFailureHandler loginFailureHandler;
     @Resource
     private RedisService redisService;
-    //获取登录请求地址
+
+    /**
+     * 获取登录请求地址
+     */
     @Value("${request.login.url}")
     private String loginUrl;
     @Override

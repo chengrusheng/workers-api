@@ -1,5 +1,9 @@
 package com.worker.utils;
 
+/**
+ * 全局统一返回结果状态码
+ * @author HP-PC
+ */
 public class ResultCode {
     /**
      * 成功状态码

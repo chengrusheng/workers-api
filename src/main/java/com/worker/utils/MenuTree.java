@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * 菜单树
+ * @author HP-PC
+ */
 public class MenuTree {
 
     /**

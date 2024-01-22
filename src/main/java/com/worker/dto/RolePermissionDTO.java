@@ -4,9 +4,20 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * 角色菜单Dto
+ * @author chengrusheng
+ */
 @Data
 public class RolePermissionDTO {
 
-    private Long roleId;//角色编号
-    private List<Long> list;//权限菜单ID集合
+    /**
+     * //角色编号
+     */
+    private Long roleId;
+
+    /**
+     * 权限菜单ID集合
+     */
+    private List<Long> list;
 }

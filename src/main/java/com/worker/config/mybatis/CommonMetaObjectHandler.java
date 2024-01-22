@@ -6,6 +6,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+/**
+ * 定义创建时间和修改时间
+ * @author HP-PC
+ */
 @Component
 public class CommonMetaObjectHandler implements MetaObjectHandler {
 
